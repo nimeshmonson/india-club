@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>India Club -- Lehigh University</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="assets/logo.png" type="image/png">
+	<meta name ="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+
+</head>
+    
+<body ng-app="myApp" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  	<div class="container-fluid">
+	   		<div class="navbar-header">
+	   			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        			<strong><span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span></strong>
+      			</button>
+	      		<a class="navbar-brand" href="#" style="font-weight: 800;"><strong>INDIA CLUB</strong></a>
+	   		</div>
+	   		<div class="collapse navbar-collapse" id="myNavbar">
+	   			<ul class="nav navbar-nav navbar-right">
+	      			<li class="active"><a href="#home"><strong>Home</strong></a></li>
+		      		<li><a href="#about"><strong>About</strong></a></li>
+		      		<li><a href="#eboard"><strong>E-Board</strong></a></li>
+		      		<li><a href="#events"><strong>Events</strong></a></li>
+		      		<li><a href="#footer"><strong>Contact</strong></a></li>
+	    		</ul>
+	   		</div>	   		
+	    </div>
+	</nav>
+
+	<div class = "container-fluid col-md-12 body-wrapper" ng-controller ="myCtrl">
+
+		<row >
+			<div  class = "col-md-12 row" id ="home">
+				<div class = "col-md-12 banner text-center" >	
+					<h2><strong>WELCOME TO INDIA CLUB</strong></h2>
+					<img src="assets/logo.png">	
+					<h4><strong>Lehigh University's Indian Cultural Graduate Student Club</strong></h4>						
+				</div>
+			</div>
+		</row>
+
+		<row >
+			<div  class = "col-md-12 desciption" id ="about">
+				<row>
+					<div class = "col-md-3 text-center">
+						<h4><strong>ABOUT<span class="underline-span"> US</span></strong></h4>
+					</div>
+					<div class ="col-md-9 text-left">
+						<p>The India Club at Lehigh University is a non-profit organization formed primarily by graduate students of Indian origin, whose purpose is to cherish the rich and vibrant culture of India. The club provides a platform to provide visibility of Indian culture to students at Lehigh and to display our creativity through participation and organization of cultural exhibitions which capture the celebrative mood of various Indian festivities.</p>
+						<br>
+						<p>The club is open to all and anybody can participate in the events. Most of our events are open to all students.</p>
+					</div>
+				</row>			
+			</div>
+		</row>
+
+		<row >
+			<div  class = "col-md-12" id ="eboard">
+				<row>
+					<div class = "col-md-9 text-center">
+						<row>
+							<a class="col-md-3 photo-circle" ng-repeat ="x in eboard" href ="{{x.fbLink}}" target="_blank" style ="background-image: url('{{x.dp}}');" id="{{x.name}}">
+								<div class="col-md-12 text-center bio hidden">									
+									<h4><strong>{{x.name}}</strong></h4>
+									<h5><strong>{{x.position}}</strong></h5>
+									<h5><i>{{x.quote}}</i></h5>									
+								</div>
+							</a>
+						</row>						
+					</div>
+					<div class = "col-md-3 text-center">
+						<h4><strong><span class="underline-span">MEE</span>T OUR E-BOARD</strong></h4>
+						<strong><h6>Click on the pictures to connect with the   E-Board</h6></strong>
+					</div>
+				</row>			
+			</div>
+		</row>
+			
+		<row >
+			<div  class = "col-md-12 text-center" id = "prospective">
+				<strong><p>Are you a Prospective Student? Get the Incoming Student Guide <a href="assets/prospective-student-guide.pdf" download="prospective-student-guide">Here!</a> </p></strong>
+
+			</div>
+		</row>
+
+		<row >
+			<div  class = "col-md-12 desciption" id ="events">
+				<row>
+					<div class = "col-md-3 text-center">
+						<h4><strong>OUR EV<span class="underline-span">ENTS</span></strong></h4>
+					</div>
+					<div class ="col-md-9 text-center" id ="gallery">
+					    <strong>
+					    	<ul class="nav nav-pills">
+							    <li class="active"><a data-toggle="pill" href="#fall">FALL</a></li>
+							    <li><a data-toggle="pill" href="#spring">SPRING</a></li>
+							    <li><a data-toggle="pill" href="#summer">SUMMER</a></li>
+				    		</ul>
+				    		<div class="tab-content">
+								<div id="fall" class="tab-pane fade in active">
+								   <div class = "col-md-4 card" ng-repeat = "x in fall">
+								   		<p>{{x.event}}</p>
+								   </div>
+								</div>
+								<div id="spring" class="tab-pane fade">
+								   <div class ="col-md-4 card" ng-repeat = "x in spring">
+								   		<p>{{x.event}}</p>
+								   </div>
+								</div>
+								<div id="summer" class="tab-pane fade">
+								   <div class ="col-md-4 card" ng-repeat = "x in summer">
+								   		<p>{{x.event}}</p>
+								   </div>
+								</div>
+							</div>
+					    </strong>
+					</div>
+				</row>			
+			</div>
+		</row>
+
+		<row>
+			<div id = "footer" class = "col-md-12 text-center">
+				<strong><h4>Contact Us</h4></strong>
+				<h5>If you have any Questions, Feel free to contact us at incl@lehigh.edu</h5>
+				<h4>And don't forget to follow us on social media!</h4>
+				<a href="https://www.facebook.com/IndiaClubLU/" target="_blank" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://www.instagram.com/indiaclublu/?hl=en" target="_blank" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+				<a href="https://www.youtube.com/channel/UCnvbISvCx1KpRsGSSssLnWA" target="_blank" ><i class="fa fa-youtube" aria-hidden="true"></i></a>
+				<a href="https://www.linkedin.com/groups/8591466/profile" target="_blank" ><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+				<a href="mailto:incl@lehigh.edu" target="_blank" ><i class="fa fa-envelope-o"></i></a>
+				<p>Designed and developed by Nimesh Monson</p>
+			</div>	
+		</row>
+			
+	</div>
+
+</body>  
+
+<!--scripts-->
+<!--<script src="less.js" type="text/javascript"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+</html>
